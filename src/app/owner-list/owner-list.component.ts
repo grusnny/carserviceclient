@@ -8,14 +8,15 @@ import { GiphyService } from '../shared/giphy/giphy.service';
   styleUrls: ['./owner-list.component.css']
 })
 export class OwnerListComponent implements OnInit {
-  owner: Array<any>;
+  owners: Array<any>;
 
-  constructor(private carService: OwnerService, private giphyService: GiphyService) { }
+  constructor(private ownerService: OwnerService, private giphyService: GiphyService) { }
 
   ngOnInit() {
-    this.carService.getAll().subscribe(data => {
-      this.owner = data;
-      for (const owner of this.owner) {
+    this.ownerService.getAll().subscribe(data => {
+      this.owners = data._embedded.owners;
+      console.log(data._embedded.owners);
+      for (const owner of this.owners) {
         this.giphyService.get(owner.name).subscribe(url => owner.giphyUrl = url);
       }
     });

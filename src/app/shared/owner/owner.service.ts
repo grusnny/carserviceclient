@@ -18,12 +18,12 @@ export class OwnerService {
     return this.http.get(this.OWNER_API + '/' + id);
   }
 
-  save(car: any): Observable<any> {
+  save(owner: any): Observable<any> {
     let result: Observable<Object>;
-    if (car['href']) {
-      result = this.http.put(car.href, car);
+    if (owner['href']) {
+      result = this.http.put(owner.href, owner);
     } else {
-      result = this.http.post(this.OWNER_API, car);
+      result = this.http.post(this.OWNER_API, owner);
     }
     return result;
   }
