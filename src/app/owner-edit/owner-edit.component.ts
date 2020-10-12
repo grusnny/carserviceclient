@@ -45,7 +45,7 @@ export class OwnerEditComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/car-list']);
+    this.router.navigate(['/owner-list']);
   }
 
   save(form: NgForm) {

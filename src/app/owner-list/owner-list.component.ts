@@ -15,7 +15,7 @@ export class OwnerListComponent implements OnInit {
   ngOnInit() {
     this.ownerService.getAll().subscribe(data => {
       this.owners = data._embedded.owners;
-      console.log(data._embedded.owners);
+      console.log(this.owners)
       for (const owner of this.owners) {
         this.giphyService.get(owner.name).subscribe(url => owner.giphyUrl = url);
       }
