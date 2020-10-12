@@ -1,5 +1,8 @@
 <mat-toolbar color="primary">
-  <span>Welcome to {{title}}!</span>
+  <div href="/home">
+  <span >Welcome to {{title}}!</span>
+  </div>
+  <button mat-button [routerLink]="['/home']">Home</button>
 </mat-toolbar>
 
 <router-outlet></router-outlet>
