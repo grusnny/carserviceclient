@@ -14,7 +14,6 @@ export class OwnerListComponent implements OnInit {
 
   constructor(private ownerService: OwnerService, 
               private giphyService: GiphyService,
-              private router: Router,
               private carService: CarService) { }
 
   ngOnInit() {
@@ -40,10 +39,13 @@ export class OwnerListComponent implements OnInit {
   }
   remove(){
     for (const owner of ownerstodelete) {
+      console.log(owner.dni)
+      console.log(owner)
       this.ownerService.remove(owner._links.owner.href).subscribe(result => {
-        this.carService.update(owner.dni);
-        this.gotoList();
         }, error => console.error(error));
+      this.carService.update(owner.dni);
       }
-    }
+    //this.gotoList();
+  }
+
 }
