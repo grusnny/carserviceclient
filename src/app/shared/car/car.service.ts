@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 export class CarService {
   public API = '//thawing-chamber-47973.herokuapp.com';
   public CAR_API = this.API + '/cars';
+  cars: Array<any>;
 
   constructor(private http: HttpClient) {
   }
@@ -30,5 +31,21 @@ export class CarService {
 
   remove(href: string) {
     return this.http.delete(href);
+  }
+
+  update(dni: string) {
+    let result: Observable<Object>;
+    this.getAll().subscribe(data => {
+      this.cars = data;
+      for (const car of this.cars) {
+        if(car.ownerDni==dni){
+            car.ownerDni=null;
+           this.save(car).subscribe(save =>{
+
+           }, error=> console.error(error));
+        }
+      }
+    });
+
   }
 }

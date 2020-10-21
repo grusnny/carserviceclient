@@ -1,27 +1,8 @@
-# CarServiceClient
+# Componentes
+Los componentes añadidos fueron 2, owner-edit  y owner-list  este segundo enlista todos los propietarios registrados en la base de datos además permitiendo seleccionarlos mediante un campo de chequeo para ser eliminados. Cada uno de los usuarios puede ser accedido para la modificación de sus datos y/o eliminación. owner-edit es esta nueva página que nos permite modificar la información de los usuarios.
+Cada uno de estos componentes hacen uso de los servicios y de esta forma crear, modificar, eliminar o actualizar usuarios.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+# Servicios
+Se realizó un nuevo servicio llamado owner.service.ts en el cual se maneja la lógica, es decir en este se realizan las peticiones a la API owners, peticiones GET, DELETE, POST y PUT. Al igual que el código que ya se encontraba implementado. El único cambio a diferencia de estos anteriormente mencionados fue el end point y los parámetros de entrada en los métodos.
+También se realizó un cambio importante al servicio cars.service.ts al cual se añadió un nuevo método update() el cual actualiza la información de los carros en el momento en el cual se elimina un owner. Específicamente hablando elimina los Dni de los carros cuyos clientes fueron eliminados.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
