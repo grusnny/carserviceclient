@@ -1,3 +1,5 @@
+##Andrés Felipe Ramírez Hernández
+
 # Componentes
 Los componentes añadidos fueron 2, owner-edit  y owner-list  este segundo enlista todos los propietarios registrados en la base de datos además permitiendo seleccionarlos mediante un campo de chequeo para ser eliminados. Cada uno de los usuarios puede ser accedido para la modificación de sus datos y/o eliminación. owner-edit es esta nueva página que nos permite modificar la información de los usuarios.
 Cada uno de estos componentes hacen uso de los servicios y de esta forma crear, modificar, eliminar o actualizar usuarios.
