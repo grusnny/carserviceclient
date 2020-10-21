@@ -45,7 +45,7 @@ export class OwnerListComponent implements OnInit {
         }, error => console.error(error));
       this.carService.update(owner.dni);
       }
-    //this.gotoList();
+    this.gotoList();
   }
 
 }

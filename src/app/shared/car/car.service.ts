@@ -37,11 +37,8 @@ export class CarService {
     let result: Observable<Object>;
     this.getAll().subscribe(data => {
       this.cars = data;
-      console.log(dni)
       for (const car of this.cars) {
-        console.log(car.ownerDni)
         if(car.ownerDni==dni){
-          console.log("ingrese")
             car.ownerDni=null;
            this.save(car).subscribe(save =>{
 
